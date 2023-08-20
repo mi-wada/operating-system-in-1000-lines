@@ -34,7 +34,10 @@ void kernel_main(void) {
   printf("\n\nHello World!\n");
   printf("1 + 2 = %d, %x\n", 1 + 2, 0x1234abcd);
 
-  // memset(__bss, 0, (size_t) __bss_end - (size_t) __bss);
+  memset(__bss, 0, (size_t) __bss_end - (size_t) __bss);
+
+  // PANIC("booted!!");
+
   for (;;) {
     __asm__ __volatile__("wfi");
   }
